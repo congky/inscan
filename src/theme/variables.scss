@@ -34,11 +34,18 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
+  primary:    #4183D7,
+  secondary:  #009496,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  favorite:   #69BB7B,
+  twitter:    #1da1f4,
+  google:     #dc4a38,
+  vimeo:      #23b6ea,
+  facebook:   #3b5998,
+  translucent: rgba(0, 0, 0, 0.3),
+  translucent-light: rgba(255, 255, 255, 0.3)
 );
 
 
@@ -86,3 +93,26 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+@font-face {
+  font-family: Lactosa;
+  src: url('../assets/fonts/lactosa.otf');
+}
+
+.platform-android5 {
+  ion-header {
+    margin-top: 20px;
+  }
+}
+
+.platform-android6 {
+  ion-header {
+    margin-top: 20px;
+  }
+}
+
+.platform-android7 {
+  ion-header {
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,83 @@
+page-login {
+
+  .content-md {
+    font-family: Lactosa;
+    color: color($colors, light);
+    background: url('../assets/imgs/bg0.png') no-repeat center;
+    background-size: 100% 100%;
+  }
+
+  .input-login .item-md{
+    background: none;
+  }
+
+  .input-login .item-md .item-inner{
+    border: none!important;
+    box-shadow: none!important;
+  }
+
+  .input-login input {
+    font-family: "Roboto", "Helvetica Neue", sans-serif;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    color: #484848;
+    background: #ffffff;
+  }
+
+  .input-login ion-label{
+    display: inline;
+    font-size: 1.7rem!important;
+  }
+
+  .login h1.title{
+    margin-top: -60px;
+    font-size: 2.6rem;
+    margin-bottom: 85px;
+    text-shadow: 2px 0 0 #0b548e, -2px 0 0 #0b548e, 0 2px 0 #0b548e, 0 -2px 0 #0b548e, 1px 1px #0b548e, -1px -1px 0 #0b548e, 1px -1px 0 #0b548e, -1px 1px 0 #0b548e;
+    font-weight: bolder;
+  }
+
+  .footer {
+    width: 90%;
+    background: none;
+    margin: 10px auto;
+    position: absolute;
+    bottom: 0;
+  }
+  .footer .toolbar-title-md {
+    font-family: "Roboto", "Helvetica Neue", sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 0.8rem;
+    color: color($colors, light);
+  }
+
+  p.login-title{
+    font-weight: bold;
+  }
+
+  p.logo {
+    width: 200px;
+    height: 170px;
+    margin: 70px auto;
+    background: url('../assets/imgs/logo-fp.png') no-repeat center;
+    background-size: 100% 100%;
+  }
+
+  .button-login{
+    margin-top: 10px;
+    text-transform: none;
+    width: 60%;
+    background: url('../assets/imgs/bg-button-0.png') no-repeat center;
+    background-size: 100% 100%;
+  }
+
+  .err-msg{
+    font-family: "Roboto", "Helvetica Neue", sans-serif;
+    color: #e13838;
+    margin: auto 17px;
+  }
+
+}

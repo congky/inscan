@@ -1,1 +1,24 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content" side="right">
+  <ion-header class="header-menu">
+    <ion-toolbar color="primary">
+      <div class="person side-menu"></div>
+      <ion-title>
+        {{util.ui.fullname}}
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <button menuClose ion-item *ngFor="let k of getKeys(pages)" (click)="openPage(pages.get(k))">
+        <ion-icon item-start color="primary" name="{{pages.get(k).icon}}"></ion-icon> {{pages.get(k).title}}
+      </button>
+      <button menuClose ion-item (click)="logout()">
+        <ion-icon item-start color="primary" name="log-out"></ion-icon> Logout
+      </button>
+    </ion-list>
+  </ion-content>
+  <ion-footer text-center>
+    INSCAN v0.1
+  </ion-footer>
+</ion-menu>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

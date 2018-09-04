@@ -1,0 +1,27 @@
+<ion-content padding>
+  <ion-grid class="full-height">
+    <ion-row align-items-center class="full-height">
+      <ion-col class="login" text-center>
+        <p class="login-title">Human Characteristic Finger Print</p>
+        <!--
+        <ion-icon name="finger-print" style="font-size: 115px;margin-top: 75px;"></ion-icon>
+        <h1 class="title">INSCAN</h1>
+        -->
+        <p class="logo"></p>
+        <div class="input-login">
+          <ion-label stacked>Kode / Phone Number</ion-label>
+          <ion-item>
+            <ion-input type="text" name="kode" [(ngModel)]="ui.kode" required></ion-input>
+          </ion-item>
+        </div>
+        <div class="err-msg" text-left *ngIf="ui.errMsg">
+          <ion-icon name="alert"></ion-icon> {{ui.errMsg}}
+        </div>
+        <button ion-button color="translucent" (click)="login()" class="button-login" [disabled]="!ui.kode">Login</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div text-center class="footer">
+    <ion-title>Copyright &copy; {{ui.date | date:'yyyy'}} Aby Indra Fikri Gita | D3 Informatika 2016 | Universitas Sangga Buana</ion-title>
+  </div>
+</ion-content>

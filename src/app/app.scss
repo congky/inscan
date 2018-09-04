@@ -14,3 +14,27 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.scroll-content {
+  padding-top: 20px !important;
+}
+
+/* photo profile */
+div.person {
+  margin: 30px auto 10px auto;
+  width: 150px;
+  height: 150px;
+  background: url(../assets/imgs/person.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100% !important;
+  border-radius: 50%;
+}
+.header-menu{
+  margin-top: -20px!important;
+  padding-top: 20px;
+}
+
+.header-menu .toolbar-title{
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 10px;
+}

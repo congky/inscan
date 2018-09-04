@@ -1,3 +1,305 @@
 page-home {
 
+  p.logo {
+    float: left;
+    width: 100px;
+    height: 80px;
+    margin: 10px auto;
+    background: url(../assets/imgs/logo-fp.png) no-repeat center;
+    background-size: 100% 100%;
+  }
+
+  span.title {
+    display: block;
+    font-family: Lactosa;
+    margin-top: 35px;
+    font-size: 30px;
+    color: color($colors, light);
+    border-bottom: 2px solid color($colors, light);
+    width: 175px;
+    margin-left: 115px;
+  }
+
+  .toolbar-background-md, .header-md::after{
+    background: none;
+  }
+
+  ion-header {
+    .toolbar {
+      position: absolute;
+
+      .toolbar-background {
+        background: transparent;
+      }
+      .toolbar-title {
+        color: black;
+      }
+    }
+  }
+
+  .scroll-content {
+    padding-top: 120px!important;
+    background: url(../assets/imgs/bg2.png) no-repeat center;
+    background-size: 100% 100%;
+  }
+
+  button.menu{
+    margin-top: -40px!important;
+  }
+
+  button.menu ion-icon{
+    font-size: 40px;
+  }
+
+  p.label-scanner{
+    margin: 30px auto;
+    color: #b1b1b1;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  p.label-scanner.check{
+    background: url('../assets/imgs/check.png') no-repeat left;
+    background-size: 30px 30px;
+    text-align: left;
+    width: 80%;
+    padding-left: 40px;
+    margin-bottom: 10px;
+  }
+
+  .result-scan{
+    height: calc(100% - 185px);
+    overflow: scroll;
+    background: color($colors, translucent-light);
+    border-radius: 10px;
+    text-align: left;
+    padding: 5px 15px 0 0;
+  }
+
+  .result-scan li{
+    list-style-type: square;
+    font-size: 30px;
+    color: #e13838;
+  }
+  .result-scan li span{
+    font-size: 20px;
+    color: color($colors, light);
+  }
+
+  .finger-icon{
+
+  }
+
+  .finger-icon ion-icon{
+    font-size: 14.2em;
+    color: color($colors, light);
+  }
+
+  .button-scan{
+    width: calc(100% - 30px);
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 60px;
+  }
+
+  .button-scan span{
+    color: color($colors, light);
+  }
+
+  button.button-pindai{
+    font-size: 20px;
+    font-family: Lactosa;
+    text-transform: none;
+    width: 80%;
+    height: 45px;
+    padding-top: 5px;
+    background: url('../assets/imgs/bg-button-2.png') no-repeat center;
+    background-size: 100% 100%;
+  }
+
+  section.icon-scan {
+    position: relative;
+    width: 210px;
+    height: 210px;
+    margin: 5em auto;
+  }
+
+  .border-corner:before {
+    display: block;
+    content: "";
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    border-top: 10px solid color($colors, light);
+    border-left: 10px solid color($colors, light);
+  }
+  .border-corner:after {
+    display: block;
+    content: "";
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    border-top: 10px solid color($colors, light);
+    border-right: 10px solid color($colors, light);
+  }
+  .border-corner span:before {
+    display: block;
+    content: "";
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: -0px;
+    left: -10px;
+    border-bottom: 10px solid color($colors, light);
+    border-left: 10px solid color($colors, light);
+  }
+  .border-corner span:after {
+    display: block;
+    content: "";
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: -0px;
+    right: -10px;
+    border-bottom: 10px solid color($colors, light);
+    border-right: 10px solid color($colors, light);
+  }
+
+  //border size
+  $bordersize: 10px;
+
+  // Basic styles
+  button.finger-icon {
+    background: none;
+    border: 0;
+    box-sizing: border-box;
+
+    // Using inset box-shadow instead of border for sizing simplicity
+    box-shadow: inset 0 0 0 $bordersize transparent;
+    font-size: inherit;
+    font-weight: 700;
+
+    // Required, since we're setting absolute on pseudo-elements
+    position: relative;
+    vertical-align: middle;
+
+    &::before,
+    &::after {
+      box-sizing: inherit;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  // Border spins around element
+  // ::before holds three borders that appear separately, one at a time
+  // ::after holds one border that spins around to cover ::before's borders, making their appearance seem smooth
+
+  .spin {
+    width: 15em;
+    height: 15em;
+    padding: 0;
+
+    &:hover {
+      color: color($colors, light);
+    }
+
+    &::before,
+    &::after {
+      top: 0;
+      left: 0;
+    }
+
+    &::before {
+      border: $bordersize solid transparent; // We're animating border-color again
+    }
+
+    &.active::before {
+      border-top-color: color($colors, light); // Show borders
+      border-right-color: color($colors, light);
+      border-bottom-color: color($colors, light);
+
+      transition:
+        border-top-color 0.15s linear, // Stagger border appearances
+        border-right-color 0.15s linear 0.10s,
+        border-bottom-color 0.15s linear 0.20s;
+    }
+
+    &::after {
+      border: 0 solid transparent; // Makes border thinner at the edges? I forgot what I was doing
+    }
+
+    &.active::after {
+      border-top: $bordersize solid color($colors, light); // Shows border
+      border-left-width: $bordersize; // Solid edges, invisible borders
+      border-right-width: $bordersize; // Solid edges, invisible borders
+      transform: rotate(270deg); // Rotate around circle
+      transition:
+        transform 0.4s linear 0s,
+        border-left-width 0s linear 0.35s; // Solid edge post-rotation
+    }
+  }
+
+  .circle {
+    border-radius: 100%;
+    box-shadow: none;
+
+    &::before,
+    &::after {
+      border-radius: 100%;
+    }
+  }
+
+  .finger{
+    margin: 50px auto;
+  }
+
+  #fingerprint {
+  }
+
+  #a, #b, #c, #d, #e {
+    fill: none;
+    stroke: #e13838;
+    stroke-dashoffset: 0;
+    stroke-width: 1;
+    transition: all 300ms ease;
+
+    &.active {
+      animation: draw 6s forwards;
+    }
+  }
+
+  #a {
+    stroke-dasharray: 12.15426254272461;
+  }
+
+  #b {
+    stroke-dasharray: 19.79115867614746;
+  }
+
+  #c {
+    stroke-dasharray: 53.00725173950195;
+  }
+
+  #d {
+    stroke-dasharray: 23.70177841186523;
+  }
+
+  #e {
+    stroke-dasharray: 8.837481498718262;
+  }
+
+  @keyframes draw {
+    20% { stroke-dashoffset: 40; }
+    40% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: 0; }
+  }
+
+
 }
